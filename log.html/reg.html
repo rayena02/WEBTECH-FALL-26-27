@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        h1 {
+            color: #1d4ed8;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .form-image {
+            display: block;
+            margin: 15px auto;
+            height: 150px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        fieldset {
+            border: 2px solid #bfdbfe;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            color: #1d4ed8;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 0 10px;
+        }
+
+        table {
+            width: 100%;
+            border-spacing: 0 12px;
+        }
+
+        td {
+            padding: 5px;
+            vertical-align: middle;
+        }
+
+        td:first-child {
+            width: 35%;
+        }
+
+        label {
+            font-weight: bold;
+            color: #334155;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="date"],
+        input[type="password"],
+        input[type="file"],
+        textarea,
+        select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            font-size: 14px;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #2563eb;
+            background-color: white;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #2563eb;
+            margin-right: 5px;
+        }
+
+        .choice {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="reset"] {
+            background-color: #e2e8f0;
+            color: #334155;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1e40af;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #cbd5e1;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            td {
+                display: block;
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Patient Registration Form</h1>
+
+        <img src="Yolo21.png" height="150"
+             class="form-image" alt="Hospital Logo">
+
+        <form>
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <table>
+                    <tr>
+                        <td>
+                            <label for="PatientName">Patient Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="PatientName"
+                                   name="PatientName"
+                                   placeholder="Enter Your Name" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="PatientAge">Patient Age:</label>
+                        </td>
+                        <td>
+                            <input type="number" id="PatientAge"
+                                   name="PatientAge" min="0" max="120"
+                                   placeholder="Enter Your Age">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="PatientEmail">Patient Email:</label>
+                        </td>
+                        <td>
+                            <input type="email" id="PatientEmail"
+                                   name="PatientEmail"
+                                   placeholder="Enter Your Email">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Gender:</label></td>
+                        <td>
+                            <label class="choice">
+                                <input type="radio" id="Male"
+                                       name="Gender" value="Male">
+                                Male
+                            </label>
+
+                            <label class="choice">
+                                <input type="radio" id="Female"
+                                       name="Gender" value="Female">
+                                Female
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="Document">Patient Medical History:</label>
+                        </td>
+                        <td>
+                            <input type="file" id="Document"
+                                   name="Document">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="DOB">Date of Birth:</label>
+                        </td>
+                        <td>
+                            <input type="date" id="DOB" name="DOB">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="Address">Address:</label>
+                        </td>
+                        <td>
+                            <textarea id="Address" name="Address"
+                                      cols="20" rows="4"
+                                      style="resize: none;"
+                                      placeholder="Enter Your Address"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="Citizenship">Citizenship:</label>
+                        </td>
+                        <td>
+                            <select id="Citizenship" name="Citizenship">
+                                <option value="">Select Option</option>
+                                <option value="BD">Bangladesh</option>
+                                <option value="USA">USA</option>
+                                <option value="CAD">Canada</option>
+                                <option value="AUS">Australia</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Doctor Department:</label></td>
+                        <td>
+                            <label class="choice">
+                                <input type="checkbox" id="Medicine"
+                                       name="DOCDept" value="Medicine">
+                                Medicine
+                            </label>
+
+                            <label class="choice">
+                                <input type="checkbox" id="Cardiac"
+                                       name="DOCDept" value="Cardiac">
+                                Cardiac
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>User Profile</legend>
+
+                <table>
+                    <tr>
+                        <td>
+                            <label for="UserName">User Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="UserName"
+                                   name="UserName"
+                                   placeholder="Enter Your User Name">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="Password">Password:</label>
+                        </td>
+                        <td>
+                            <input type="password" id="Password"
+                                   name="Password"
+                                   placeholder="Enter Your Password">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <div class="buttons">
+                <input type="submit" id="Submit" value="Signup">
+                <input type="reset" id="reset" value="Reset">
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
